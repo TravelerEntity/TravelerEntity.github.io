@@ -18,7 +18,7 @@
   <meta name="author" content="LinYn">
   <meta name="keywords" content="">
   
-  <title>test - Hexo</title>
+  <title>Java多线程基础 - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="test">
+            <span class="h2" id="subtitle" title="Java多线程基础">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-05-01 18:47" pubdate>
-        2021年5月1日 晚上
+      <time datetime="2021-05-02 11:49" pubdate>
+        2021年5月2日 中午
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      773 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      9
        分钟
     </span>
   
@@ -225,15 +225,54 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">test</h1>
+            <h1 style="display: none">Java多线程基础</h1>
             
             <div class="markdown-body">
-              
+              <h1 id="线程和进程"><a href="#线程和进程" class="headerlink" title="线程和进程"></a>线程和进程</h1><p>当我们在<strong>一边写代码一边听音乐</strong>的时候，可以大概描述成现在正在执行两个<strong>进程</strong>——听音乐和写代码，然后写代码的这个<strong>进程下又有多个线程</strong>，比如脑中思考代码的线程，手里敲键盘的线程，看屏幕上已有代码的线程等。但其实人脑并不具备多进程工作的能力，我们只是快速地在多个任务之间来回切换，多进程工作的能力只是一种错觉。</p>
+<p>程序默认的执行逻辑是从上到下，如果在中间调用了其它的方法则主线程去执行其它该方法，执行完后返回到主方法继续顺序执行。如果开启多线程的话，程序在碰到其它方法的调用时，会新增一个线程去独立执行，原来的主线程还是自己做自己的。</p>
+<h2 id="关于多线程的核心概念"><a href="#关于多线程的核心概念" class="headerlink" title="关于多线程的核心概念"></a>关于多线程的核心概念</h2><ol>
+<li>程序运行时会默认的创建一些线程，比如 <code>Main()</code> 线程。</li>
+<li>多个线程之间的执行顺序由CPU决定</li>
+<li>多线程会带来额外的开销，反复横跳肯定要付出额外的资源的呀</li>
+<li>一个进程就是一个程序的单次运行结果，而一个进程下也允许有多个线程共同协作。</li>
+</ol>
+<h2 id="继承Thread类开启线程"><a href="#继承Thread类开启线程" class="headerlink" title="继承Thread类开启线程"></a>继承Thread类开启线程</h2><ol>
+<li>自定义一个继承自 <code>Thread</code> 的类</li>
+<li>重写它的 <code>run()</code>方法</li>
+<li>主函数中调用该类实例的 <code>start() </code> 方法即可开启线程。很简单是吧？（y1s1,qs…</li>
+</ol>
+<p>另外，开启的线程并不一定会立即执行，这个是看cpu的调度，我们无法控制，核心概念第二条提到过。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainTest</span> </span><br><span class="hljs-class"></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span><br><span class="hljs-function">    </span>&#123;<br>        DemoExThread d = <span class="hljs-keyword">new</span> DemoExThread();<br>        d.start();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">400</span>; i++) <br>        &#123;<br>            System.out.println(<span class="hljs-string">&quot;This is Main Thread_____________&quot;</span>+i);<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DemoExThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span></span><br><span class="hljs-class"></span>&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; i++) <br>        &#123;<br>            System.out.println(<span class="hljs-string">&quot;这肯定不是主线程~&quot;</span>+i);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="实现Runnable接口开启线程"><a href="#实现Runnable接口开启线程" class="headerlink" title="实现Runnable接口开启线程"></a>实现Runnable接口开启线程</h2><p>实现 <code>Runnable</code> 接口来开启线程的方式相比继承 <code>Thread</code> 类只多了第四步，两种方式的接口是一样的。只是在实际使用中，更推荐实现 <code>Runnable</code> 接口来开启线程。因为 Java 不是只支持单继承嘛，继承的名额要物尽其用。</p>
+<ol>
+<li>自定义一个实现了 <code>Runnable</code> 接口</li>
+<li>重写 <code>run()</code> 方法</li>
+<li>然后在主函数中实例化该类对象</li>
+<li>实例化一个 <code>Thread</code> 对象，并把 <code>Runnable</code> 接口的实现类传进它的构造参数</li>
+<li>调用 <code>Thread</code> 对象的 <code>start()</code> 方法开启线程（因为<code>Runnable</code> 接口没有 <code>start()</code> 方法，曲线救国，曲线救国…）。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainTest</span> </span><br><span class="hljs-class"></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span><br><span class="hljs-function">    </span>&#123;<br>        DemoImRunnable dr = <span class="hljs-keyword">new</span> DemoImRunnable();<br>        <span class="hljs-keyword">new</span> Thread(dr).start();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">200</span>; i++) <br>        &#123;<br>            System.out.println(<span class="hljs-string">&quot;This is the Main thread*&quot;</span>+i);<br>        &#125;<br>    &#125;<br>&#125;<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DemoImRunnable</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Runnable</span></span><br><span class="hljs-class"></span>&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; i++) <br>        &#123;<br>            System.out.println(<span class="hljs-string">&quot;这肯定不是主线程*&quot;</span>+i);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ol>
+
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/learn/">learn</a>
+                    
+                      <a class="hover-with-bg" href="/categories/learn/java/">java</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
+                    
+                  </div>
                 
               </div>
               
@@ -248,18 +287,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/05/02/ti/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">ti</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/03/02/Java-%E6%B5%81-%E7%BF%81%E6%81%BA/">
-                        <span class="hidden-mobile">流</span>
+                      <a href="/2021/05/02/ti/">
+                        <span class="hidden-mobile">ti</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

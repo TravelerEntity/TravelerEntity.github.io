@@ -1,0 +1,494 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="LinYn">
+  <meta name="keywords" content="">
+  
+  <title>流 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"travelerentity.github.io","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="流">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-02 11:37" pubdate>
+        2021年3月2日 中午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      23
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">流</h1>
+            
+            <div class="markdown-body">
+              <h1 id="流-Stream"><a href="#流-Stream" class="headerlink" title="流(Stream)"></a>流(Stream)</h1><p>流，看起来好像很抽象的一个概念 <del>确实如此</del>，但其实我们写的Java第一个程序就用到了流。我们最开始写用来hello world的<code>System.out.println()</code>就是一种<strong>输出流（OutputStraem）</strong>，从控制读输入时用的<code>System.in.read()</code>则是一种<strong>输入流（InputStream）</strong>。<strong>它们俩就是Java里IO流中的字节流</strong>（还有一个<strong>字符流</strong>）。</p>
+<p>提到流我们很难不想像到溪流，流确实也像溪流那样，<strong>单方向流动，流一般也还有长度。</strong></p>
+<h2 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h2><p>字节流是<strong>Java IO流</strong>中的一种，字节流下面还有<code>OutputStream</code>和<code>InputStream</code>这两个抽象类。我们尝试一下从控制台读入流：</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">byte<span class="hljs-literal">[]</span> chars = <span class="hljs-keyword">new</span> byte<span class="hljs-literal">[<span class="hljs-number">1024</span>]</span>;<br>    <span class="hljs-keyword">try</span> &#123;<br>        <span class="hljs-comment">//read方法会返回它读到的字节数</span><br>        <span class="hljs-built_in">int</span> len = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span><span class="hljs-keyword">in</span>.read(chars);<br>        String s = <span class="hljs-keyword">new</span> <span class="hljs-constructor">String(<span class="hljs-params">chars</span>,0,<span class="hljs-params">len</span>)</span>;<br>        <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>out.println(<span class="hljs-string">&quot;读到了&quot;</span>+len+<span class="hljs-string">&quot;个字节&quot;</span>);<br>        <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>out.println(s);<br>        <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>out.println(<span class="hljs-string">&quot;s的长度为&quot;</span>+s.length<span class="hljs-literal">()</span> );<br>    &#125; catch (IOException e) &#123;<br>        e.print<span class="hljs-constructor">StackTrace()</span>;<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<p>我们输入”aaa111”然后看看结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plain">读到了7个字节<br>aaa111<br><br>s的长度为7<br></code></pre></td></tr></table></figure>
+<p>它居然说读到了7个字节，但我们只输了了6个字符。这是因为我们输入完成后，还按了一下回车，<strong>回车也算一个字节。</strong> 我们看到”aaa111”后面还有一个空行，因为我们使用的是<code>printnl()</code>带一个回车，然后我们的输入里面还有一个回车，所以才会有那个空行。</p>
+<p>我们输入”你好，世界”试试：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plain">读到了16个字节<br>你好，世界<br><br>s的长度为6<br></code></pre></td></tr></table></figure>
+<p>这次它读到了16个字节，因为<strong>unicode编码中一个中文字符算3个字节</strong>。我们输入了5个中文字符和一个回车，刚好16个字节。<strong>s的长度是按照字符个数来算的</strong>，不受不同编码不同字节数的影响，所以还是为6。</p>
+<h2 id="文件中的字节流"><a href="#文件中的字节流" class="headerlink" title="文件中的字节流"></a>文件中的字节流</h2><p>这次我们要用到<code>FileOuputStream</code>来测试一下文件输出流，看得出来它肯定和<code>OutputStream</code>有点关系：</p>
+<figure class="highlight d"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs d"><span class="hljs-keyword">byte</span>[] bytes = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">10</span>];<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; bytes.length; i++) &#123;<br>    bytes[i] = (<span class="hljs-keyword">byte</span>) i;<br>&#125;<br><span class="hljs-keyword">try</span> &#123;<br>    FileOutputStream <span class="hljs-keyword">out</span> = <span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">&quot;new.dat&quot;</span>);<br>    <span class="hljs-keyword">out</span>.write(bytes);<br>    <span class="hljs-keyword">out</span>.close();<br>&#125; <span class="hljs-keyword">catch</span> (FileNotFoundException e) &#123;<br>    e.printStackTrace();<br>&#125; <span class="hljs-keyword">catch</span> (IOException e) &#123;<br>    e.printStackTrace();<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>运行完后，在项目的根目录多了发现多了一个 new.dat 文件，用二进制格式打开它发现：</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">00 </span><span class="hljs-number">01</span> <span class="hljs-number">02</span> <span class="hljs-number">03</span> <span class="hljs-number">04</span> <span class="hljs-number">05</span> <span class="hljs-number">06</span> <span class="hljs-number">07</span> <span class="hljs-number">08</span> <span class="hljs-number">09</span> <br></code></pre></td></tr></table></figure>
+<p>我们成功往 new.dat 文件里放了10组数字，<code>OutPutStream</code>对象完完整整地把循环变量以<strong>二进制</strong>的方式从内存中输出到了文件里面。</p>
+<h3 id="DataOutputStream"><a href="#DataOutputStream" class="headerlink" title="DataOutputStream"></a>DataOutputStream</h3><p><code>outputStream</code>对象只能做最基本的8位二进制输出，如果我们想要输出基本数据类型，就需要借助<code>DataOutputStream</code>对象（这叫过滤流）</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">//           通过FileOutputStream来构建DataOutputStraem对象<br>DataOutputStream <span class="hljs-keyword">out</span> = <span class="hljs-built_in">new</span> DataOutputStream(<br>            <span class="hljs-built_in">new</span> FileOutputStream(&quot;new.dat&quot;) );<br>          <span class="hljs-keyword">out</span>.writeInt(<span class="hljs-number">0xcafebabe</span>);<br>//            <span class="hljs-keyword">out</span>.writeUTF(&quot;helloworld&quot;);<br>            <span class="hljs-keyword">out</span>.<span class="hljs-keyword">close</span>();<br>            <br>            DataInputStream <span class="hljs-keyword">in</span> = <span class="hljs-built_in">new</span> DataInputStream(<br>                    <span class="hljs-built_in">new</span> FileInputStream(&quot;new.dat&quot;) );<br>            <span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(<span class="hljs-keyword">in</span>.readInt() );<br>            <span class="hljs-keyword">in</span>.<span class="hljs-keyword">close</span>();<br>        &#125; catch (IOException e) &#123;<br>            e.printStackTrace();<br>        &#125;<br></code></pre></td></tr></table></figure>
+<p>我们通过流往文件里写了一个十六进制的数据<code>cafebabe</code>，我们用打开该文件，里面同样还是显示着<code>cafebabe</code>。好吧，文件是以十六进制格式展示的。我们再用输入流读入该文件，我们发现读入的数是<code>682085</code>。</p>
+<h2 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h2><p>前面我们都是通过二进制流的方式读写文件，写入文件中的实际上是二进制文件，作为人的我们阅读起来很困难啊。尽管<code>FileOutputStream</code>有<code>writeUTF()</code>方法允许我们写入uft字符，但是，但是我们打开文件查看发现还是uft字符在二进制中的编码。好吧。<strong>我们还是使用字符流来干这事吧。</strong></p>
+<p>字符流提供了两个对象，<strong>Reader和Writer</strong>，分别<strong>对应读和写。</strong></p>
+<p>由于Reader和Writer是<strong>两个抽象类</strong>无法直接使用，使用我们使用它们的子类 <code>BufferedReader</code>和<code>BufferedWriter</code>。</p>
+<p>让我们想让写段代码，然后当它读取自己吧😅：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">BufferedReader <span class="hljs-keyword">in</span>  = <span class="hljs-built_in">new</span> BufferedReader(<br>                  <span class="hljs-built_in">new</span> InputStreamReader(<br>                          <span class="hljs-built_in">new</span> FileInputStream(&quot;Day1/src/stream/Test.java&quot;)<br>                  )<br>          );<br>          String <span class="hljs-type">line</span>;<br>          //BufferedReader的Readline()方法每次读取一行，在读到文件末尾时返回一个<span class="hljs-keyword">null</span>，所以我们让它没读到<span class="hljs-keyword">null</span>时循环读取每一行<br>          <span class="hljs-keyword">while</span>( (<span class="hljs-type">line</span> = <span class="hljs-keyword">in</span>.readLine() )!= <span class="hljs-keyword">null</span>)<br>          &#123;<br>              <span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(<span class="hljs-type">line</span>);<br>          &#125;<br>          <span class="hljs-keyword">in</span>.<span class="hljs-keyword">close</span>();<br></code></pre></td></tr></table></figure>
+<p><strong>输出结果：</strong></p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs arduino">package stream;<br><br><span class="hljs-keyword">import</span> java.io.*;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> &#123;</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">String</span>[] args)</span> </span>&#123;<br>        <span class="hljs-keyword">try</span> &#123;<br><span class="hljs-comment">//            BufferedWriter out = new BufferedWriter(</span><br><span class="hljs-comment">//                    new OutputStreamWriter(</span><br><span class="hljs-comment">//                            new FileOutputStream(&quot;out.txt&quot;)</span><br><span class="hljs-comment">//                    )</span><br><span class="hljs-comment">//            );</span><br><span class="hljs-comment">//            out.write(&quot;输出流一段中文&quot;);</span><br>           BufferedReader in  = <span class="hljs-keyword">new</span> <span class="hljs-built_in">BufferedReader</span>(<br>                   <span class="hljs-keyword">new</span> <span class="hljs-built_in">InputStreamReader</span>(<br>                           <span class="hljs-keyword">new</span> <span class="hljs-built_in">FileInputStream</span>(<span class="hljs-string">&quot;Day1/src/stream/Test.java&quot;</span>)<br>                   )<br>           );<br>           <span class="hljs-keyword">String</span> line;<br>           <span class="hljs-keyword">while</span>( (line = in.<span class="hljs-built_in">readLine</span>() )!= null)<br>           &#123;<br>               System.out.<span class="hljs-built_in">println</span>(line);<br>           &#125;<br><span class="hljs-comment">//           out.close();</span><br>           in.<span class="hljs-built_in">close</span>();<br>        &#125; <span class="hljs-built_in"><span class="hljs-keyword">catch</span></span> (IOException e) &#123;<br>            e.<span class="hljs-built_in">printStackTrace</span>();<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-built_in">Process</span> finished with exit code <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+<p>成功了！成功的让代码读到了自己。</p>
+<p>这是个成功的字符流使用案例，但其实看代码发现<strong>字符流的底层其实还是字节流</strong>。我们用了<code>InputStreamReader</code>对象来建立字节流与字符流的转换桥梁。可以说<code>InputStreamReader</code>是字节流和字符流之前的桥梁。</p>
+<p>字符流的输出操作也基本和之前的类似，已经注释在代码中了。</p>
+<h2 id="Scanner"><a href="#Scanner" class="headerlink" title="Scanner"></a>Scanner</h2><p>Scanner同样也能作为读入文件的对象，只要给也给他它一个输入流就行了。</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs arduino">Scanner in = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Scanner</span>( <span class="hljs-keyword">new</span> <span class="hljs-built_in">BufferedInputStream</span>(<br>                   <span class="hljs-keyword">new</span> <span class="hljs-built_in">FileInputStream</span>(<span class="hljs-string">&quot;Day1/src/stream/Test.java&quot;</span>) ) );<br>           <span class="hljs-keyword">String</span> line;<br>           <span class="hljs-keyword">while</span>( in.<span class="hljs-built_in">hasNextLine</span>())<br>           &#123;<br>               System.out.<span class="hljs-built_in">println</span>(in.<span class="hljs-built_in">nextLine</span>());<br>           &#125;<br>           in.<span class="hljs-built_in">close</span>();<br></code></pre></td></tr></table></figure>
+
+<p>这几种方式该如何选择呢？</p>
+<figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs isbl"><span class="hljs-function"><span class="hljs-title">if</span>(二进制数据)</span><br>&#123;<br>    <span class="hljs-function"><span class="hljs-title">useInputStream</span>();</span><br><span class="hljs-function">&#125;</span><br><span class="hljs-function"><span class="hljs-variable"><span class="hljs-keyword">else</span></span> <span class="hljs-title">if</span>(数据是文本类型) </span><br><span class="hljs-function">&#123;</span><br><span class="hljs-function">    <span class="hljs-title">userReader</span>();</span><br><span class="hljs-function">&#125;</span><br><span class="hljs-function"><span class="hljs-variable"><span class="hljs-keyword">else</span></span></span><br><span class="hljs-function">&#123;</span><br><span class="hljs-function">    <span class="hljs-title">userScanner</span>();</span><br><span class="hljs-function">&#125;</span><br></code></pre></td></tr></table></figure>
+<p>got it?</p>
+<h2 id="对象串行化"><a href="#对象串行化" class="headerlink" title="对象串行化"></a>对象串行化</h2><p>既然能通过流往文件里面写入各种类型的数据，那我们能直接将对象写进文件里面嘛？虽然可以直接把对象保存的数据通过字节流（<code>eg DataOutputStream</code>）写入文件。但写入一个完整的对象，听起来是不是就更🐂🍺一点呢？其实这样还有个有点。写入的对象可以用来存储一些不能公开的数据。<br>这种将对象以二进制存储的形式，叫<strong>对象串行化</strong>。</p>
+<p>我们要用到<code>ObjectOutputStream</code>，很直观的名字是吧。<br>我们先把对象做出来：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-comment">///对象需要实现Serializable接口才能顺利串行化</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> <span class="hljs-title">implements</span> <span class="hljs-title">Serializable</span></span>&#123;<br>    <span class="hljs-built_in">String</span> name;<br>    int age;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-title">Student</span>(<span class="hljs-params"><span class="hljs-built_in">String</span> name, int age</span>)</span> &#123;<br>        <span class="hljs-built_in">this</span>.name = name;<br>        <span class="hljs-built_in">this</span>.age = age;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">String</span> <span class="hljs-function"><span class="hljs-title">toString</span>(<span class="hljs-params"></span>)</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Student&#123;&quot;</span> +<br>                <span class="hljs-string">&quot;name=&#x27;&quot;</span> + name + <span class="hljs-string">&#x27;\&#x27;&#x27;</span> +<br>                <span class="hljs-string">&quot;, age=&quot;</span> + age +<br>                <span class="hljs-string">&#x27;&#125;&#x27;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>我们怎么把对象变成字节：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">        Student s1 = <span class="hljs-built_in">new</span> Student(&quot;Lee&quot;,<span class="hljs-number">12</span>);<br>//      ObjectOutputStream对象需要建立在一个FileOutputStream的基础上<br>        ObjectOutputStream <span class="hljs-keyword">out</span> = <span class="hljs-built_in">new</span> ObjectOutputStream(<br>                <span class="hljs-built_in">new</span> FileOutputStream(&quot;stu.dat&quot;)<br>        );<br>        <span class="hljs-keyword">out</span>.writeObject(s1);<br>        <span class="hljs-keyword">out</span>.<span class="hljs-keyword">close</span>();<br><br>        ObjectInputStream <span class="hljs-keyword">in</span> = <span class="hljs-built_in">new</span> ObjectInputStream(<br>                <span class="hljs-built_in">new</span> FileInputStream(&quot;stu.dat&quot;)<br>        );<br>        <span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println( (Student) <span class="hljs-keyword">in</span>.readObject() );<br>        <span class="hljs-keyword">in</span>.<span class="hljs-keyword">close</span>();<br></code></pre></td></tr></table></figure>
+<p>成功获得输出：</p>
+<pre><code>    Student&#123;name=&#39;Lee&#39;, age=12&#125;
+</code></pre>
+<p>学完这一节，终于能将对象保存进文件里面了。</p>
+<h3 id="序列化流的UID"><a href="#序列化流的UID" class="headerlink" title="序列化流的UID"></a>序列化流的UID</h3><p>序列化流都有一个这样的ID：<code>private static final long serialVersionUID</code>。这个ID如果不显式定义的话，<strong>会依靠类中的属性、方法来生成</strong>。</p>
+<p>在反序列化对象文件时，会依据这个ID来判断是不是同一个对象，<strong>如果不一样就抛异常。</strong></p>
+<p>如果不显式定义话，当我们序列化写入一个对象之后再修改了对象所在的类，这时的ID已经和写入时不一样了，所以再读入时就会直接抛异常。</p>
+<p>JDK文档也强烈建议我们在<strong>实现序列化接口时显示定义UID。</strong></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/learn/">learn</a>
+                    
+                      <a class="hover-with-bg" href="/categories/learn/java/">java</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/05/01/test/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">test</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
