@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"travelerentity.github.io","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"travelerentity.github.io","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -68,7 +68,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>LinYun</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      773 字
+      780 字
     </span>
   
 
@@ -237,6 +237,10 @@
             
             <div class="markdown-body">
               <h1 id="线程和进程"><a href="#线程和进程" class="headerlink" title="线程和进程"></a>线程和进程</h1><p>当我们在<strong>一边写代码一边听音乐</strong>的时候，可以大概描述成现在正在执行两个<strong>进程</strong>——听音乐和写代码，然后写代码的这个<strong>进程下又有多个线程</strong>，比如脑中思考代码的线程，手里敲键盘的线程，看屏幕上已有代码的线程等。但其实人脑并不具备多进程工作的能力，我们只是快速地在多个任务之间来回切换，多进程工作的能力只是一种错觉。</p>
+<div class="note note-success">
+            <p>文字 或者 <code>markdown</code> 均可</p>
+          </div>
+
 <p>程序默认的执行逻辑是从上到下，如果在中间调用了其它的方法则主线程去执行其它该方法，执行完后返回到主方法继续顺序执行。如果开启多线程的话，程序在碰到其它方法的调用时，会新增一个线程去独立执行，原来的主线程还是自己做自己的。</p>
 <h2 id="关于多线程的核心概念"><a href="#关于多线程的核心概念" class="headerlink" title="关于多线程的核心概念"></a>关于多线程的核心概念</h2><ol>
 <li>程序运行时会默认的创建一些线程，比如 <code>Main()</code> 线程。</li>
