@@ -4,13 +4,31 @@
   
   
   <entry>
-    <title>测试文章</title>
-    <link href="/2021/06/28/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
-    <url>/2021/06/28/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    <title>Maven入门</title>
+    <link href="/2021/06/Maven%E5%85%A5%E9%97%A8/"/>
+    <url>/2021/06/Maven%E5%85%A5%E9%97%A8/</url>
     
-    <content type="html"><![CDATA[<p>新的一篇测试文章</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><p>在实际开发中，我们会不可避免的使用各种各样的 Jar 包。为了避免每次都要手动复制 Jar 包的麻烦，Maven出现了。</p><p>Maven是一种项目管理工具，官方是这么定义的。简单来说呢 Maven 主要是为了在项目中实现自动导包的功能。</p><h2 id="大致工作流程"><a href="#大致工作流程" class="headerlink" title="大致工作流程"></a>大致工作流程</h2><ol><li>Maven 中有一个<strong>中心仓库</strong>，中心仓库里收录了各种各样的 Jar 包。</li><li>在项目文件中，添加一个 Maven 的配置文件，如果需要某个 Jar 包，就写在配置文件中，由 Maven 替我们导入 Jar 包。<h2 id="Maven安装与使用"><a href="#Maven安装与使用" class="headerlink" title="Maven安装与使用"></a>Maven安装与使用</h2><h3 id="安装Maven"><a href="#安装Maven" class="headerlink" title="安装Maven"></a>安装Maven</h3></li><li>在<a href="https://maven.apache.org/download.cgi">Apatch 官网</a>下载最新的 Maven 工具。</li><li>解压 Maven 到某个文件夹</li><li>配置 Maven 环境变量<ol><li><code>MAVEN_HOME</code> 环境变量，指向 Mavne 的安装目录</li><li><code>M2_HOME</code> 环境变量，指向 Maven 安装目录下的<code>bin</code>目录。</li><li><code>path</code>变量中添加指向 <code>M2_HOME</code> 变量。</li></ol></li><li>cmd中测试使用 <code>mvn -version</code> 命令测试是否安装成功。</li></ol><h3 id="配置Maven"><a href="#配置Maven" class="headerlink" title="配置Maven"></a>配置Maven</h3><h4 id="本地仓库"><a href="#本地仓库" class="headerlink" title="本地仓库"></a>本地仓库</h4><p>上面提到过 Maven 有一个<strong>中心仓库</strong>的概念，这个中心仓库，可以是远程，也可以是在本地，先配置一个本地仓库。我们把本地仓库放到 Maven 安装目录中。</p><ol><li>在 Maven 安装目录下新建一个<code>maven-re</code>文件夹，这个文件夹作为我们的本地仓库</li><li>在 Maven 安装目录下的 <code>conf</code> 里有个<code>settings.xml</code> 文件，在里面加入<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">localRepository</span>&gt;</span>apache-maven-3.8.1\maven-re<span class="hljs-tag">&lt;/<span class="hljs-name">localRepository</span>&gt;</span><br></code></pre></td></tr></table></figure>这样我们的本地仓库就算建好了。</li></ol><h4 id="远程仓库镜像"><a href="#远程仓库镜像" class="headerlink" title="远程仓库镜像"></a>远程仓库镜像</h4><p>如果需要，还可以配置一个远程仓库镜像加快下载 Jar 包的速度<br>在上面的<code>settigns.xml</code>文件的<mirrors>标签中加入：</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">mirror</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>alimaven<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>aliyun maven<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public/<span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">mirrorOf</span>&gt;</span>central<span class="hljs-tag">&lt;/<span class="hljs-name">mirrorOf</span>&gt;</span>        <br><span class="hljs-tag">&lt;/<span class="hljs-name">mirror</span>&gt;</span><br></code></pre></td></tr></table></figure><h3 id="Idea中Maven的使用"><a href="#Idea中Maven的使用" class="headerlink" title="Idea中Maven的使用"></a>Idea中Maven的使用</h3><p>Idea中内置了Maven，不过我们前面都自己下好了一个，肯定是用我们自己的Maven。</p><p>我们需要在<code>Idea-&gt;File-&gt;Settings-&gt;Build-&gt;BuildTools-&gt;Maven</code>中，把Maven的<code>home path</code>和<code>local repository</code>改成我们刚刚配置的。</p><h3 id="新建项目测试"><a href="#新建项目测试" class="headerlink" title="新建项目测试"></a>新建项目测试</h3><p>Maven配置完成后，下一步开始新建项目测试，直接新建一个Maven项目，选择<code>maven-archetype-webapp</code>，<img src="https://note.youdao.com/yws/public/resource/1fe74225859429a4a7b53fe7ae976bf1/xmlnote/WEBRESOURCE09481a58924d603fd184bbc67845b8d8/10"></p>]]></content>
     
     
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>Maven</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Maven</tag>
+      
+      <tag>Tool</tag>
+      
+      <tag>Dependency</tag>
+      
+    </tags>
     
   </entry>
   
