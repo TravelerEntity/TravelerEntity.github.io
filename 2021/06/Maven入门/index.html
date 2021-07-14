@@ -14,7 +14,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
+  <meta name="description" content="在实际开发中，我们会不可避免的使用各种各样的 Jar 包。为了避免每次都要手动复制 Jar 包的麻烦，Maven出现了。">
   <meta name="author" content="LinYn">
   <meta name="keywords" content="">
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      588 字
+      612 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      11
+      12
        分钟
     </span>
   
@@ -236,14 +236,17 @@
             <h1 style="display: none">Maven入门</h1>
             
             <div class="markdown-body">
-              <h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><p>在实际开发中，我们会不可避免的使用各种各样的 Jar 包。为了避免每次都要手动复制 Jar 包的麻烦，Maven出现了。</p>
+              <p>在实际开发中，我们会不可避免的使用各种各样的 Jar 包。为了避免每次都要手动复制 Jar 包的麻烦，Maven出现了。</p>
+<span id="more"></span>
 <p>Maven是一种项目管理工具，官方是这么定义的。简单来说呢 Maven 主要是为了在项目中实现自动导包的功能。</p>
 <h2 id="大致工作流程"><a href="#大致工作流程" class="headerlink" title="大致工作流程"></a>大致工作流程</h2><ol>
 <li>Maven 中有一个<strong>中心仓库</strong>，中心仓库里收录了各种各样的 Jar 包。</li>
-<li>在项目文件中，添加一个 Maven 的配置文件，如果需要某个 Jar 包，就写在配置文件中，由 Maven 替我们导入 Jar 包。<h2 id="Maven安装与使用"><a href="#Maven安装与使用" class="headerlink" title="Maven安装与使用"></a>Maven安装与使用</h2><h3 id="安装Maven"><a href="#安装Maven" class="headerlink" title="安装Maven"></a>安装Maven</h3></li>
+<li>在项目文件中，添加一个 Maven 的配置文件，如果需要某个 Jar 包，就写在配置文件中，由 Maven 替我们导入 Jar 包。</li>
+</ol>
+<h2 id="Maven安装与使用"><a href="#Maven安装与使用" class="headerlink" title="Maven安装与使用"></a>Maven安装与使用</h2><h3 id="安装Maven"><a href="#安装Maven" class="headerlink" title="安装Maven"></a>安装Maven</h3><ol>
 <li>在<a target="_blank" rel="noopener" href="https://maven.apache.org/download.cgi">Apatch 官网</a>下载最新的 Maven 工具。</li>
 <li>解压 Maven 到某个文件夹</li>
-<li>配置 Maven 环境变量<ol>
+<li>配置 Maven <strong>环境变量</strong><ol>
 <li><code>MAVEN_HOME</code> 环境变量，指向 Mavne 的安装目录</li>
 <li><code>M2_HOME</code> 环境变量，指向 Maven 安装目录下的<code>bin</code>目录。</li>
 <li><code>path</code>变量中添加指向 <code>M2_HOME</code> 变量。</li>
@@ -262,7 +265,7 @@
 
 <h3 id="Idea中Maven的使用"><a href="#Idea中Maven的使用" class="headerlink" title="Idea中Maven的使用"></a>Idea中Maven的使用</h3><p>Idea中内置了Maven，不过我们前面都自己下好了一个，肯定是用我们自己的Maven。</p>
 <p>我们需要在<code>Idea-&gt;File-&gt;Settings-&gt;Build-&gt;BuildTools-&gt;Maven</code>中，把Maven的<code>home path</code>和<code>local repository</code>改成我们刚刚配置的。</p>
-<h3 id="新建项目测试"><a href="#新建项目测试" class="headerlink" title="新建项目测试"></a>新建项目测试</h3><p>Maven配置完成后，下一步开始新建项目测试，直接新建一个Maven项目，选择<code>maven-archetype-webapp</code>，<img src="https://note.youdao.com/yws/public/resource/1fe74225859429a4a7b53fe7ae976bf1/xmlnote/WEBRESOURCE09481a58924d603fd184bbc67845b8d8/10" srcset="/img/loading.gif" lazyload></p>
+<h3 id="新建项目测试"><a href="#新建项目测试" class="headerlink" title="新建项目测试"></a>新建项目测试</h3><p>Maven配置完成后，下一步开始新建项目测试，直接新建一个Maven项目，选择<code>maven-archetype-webapp</code>，然后注意选择Maven版本时选择我们刚刚配置好的Maven版本就行了。</p>
 
             </div>
             <hr>
@@ -272,9 +275,11 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/Java/">Java</a>
+                      <a class="hover-with-bg" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
                     
-                      <a class="hover-with-bg" href="/categories/Java/Maven/">Maven</a>
+                      <a class="hover-with-bg" href="/categories/%E5%90%8E%E7%AB%AF/Java/">Java</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%90%8E%E7%AB%AF/Java/Maven/">Maven</a>
                     
                   </div>
                 
@@ -302,6 +307,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/07/HTML%E7%AE%80%E4%BB%8B/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">HTML简介</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
