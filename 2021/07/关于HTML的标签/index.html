@@ -1,0 +1,789 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="LinYn">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="HTML文件中的所以内容都是用标签来修饰的。这些标签也被称为HTML元素，元素的内容则是开始标签和结束标签之间的内容。这些元素还支持嵌套使用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于HTML的标签">
+<meta property="og:url" content="https://travelerentity.github.io/2021/07/%E5%85%B3%E4%BA%8EHTML%E7%9A%84%E6%A0%87%E7%AD%BE/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="HTML文件中的所以内容都是用标签来修饰的。这些标签也被称为HTML元素，元素的内容则是开始标签和结束标签之间的内容。这些元素还支持嵌套使用。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://travelerentity.github.io/images/2021S2/html_index.jpg">
+<meta property="article:published_time" content="2021-07-11T10:13:29.000Z">
+<meta property="article:modified_time" content="2021-07-15T03:03:03.298Z">
+<meta property="article:author" content="LinYn">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="HTML">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://travelerentity.github.io/images/2021S2/html_index.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>关于HTML的标签 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"travelerentity.github.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>LinYun</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="关于HTML的标签"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-07-11 18:13" pubdate>
+          2021年7月11日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          4.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          38 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">关于HTML的标签</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>HTML文件中的所以内容都是用标签来修饰的。这些标签也被称为<strong>HTML元素，元素的内容则是开始标签和结束标签之间的内容。</strong>这些元素还支持嵌套使用。</p>
+<span id="more"></span>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>        ...<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>        ...<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>比如在这个只有结构的文档中，<code>&lt;body&gt;</code>标签就是嵌套在<code>&lt;html&gt;</code>标签中的。</p>
+<h2 id="标签的语法"><a href="#标签的语法" class="headerlink" title="标签的语法"></a>标签的语法</h2><p>目前我们见到的标签几乎都是双标签，但HTML也定义了相当数量的单标签，比如<code>&lt;img&gt;</code>，定义图片、<code>&lt;hr&gt;</code>定义一道线。</p>
+<p>HTML语法算是容错机制很强的了，一些标签即使你忘记关闭，也能被浏览器正确解析，但不介意这么做。同时，使用大写或者小写定义标签都是可以显示的，不过w3c<strong>建议使用小写定义标签。</strong></p>
+<h2 id="常见的标签"><a href="#常见的标签" class="headerlink" title="常见的标签"></a>常见的标签</h2><ul>
+<li><code>&lt;h1&gt;</code> 定义标题，使用标题不仅仅至少把字体变大，这也有利与浏览器分析文档的结构</li>
+<li><code>&lt;p&gt;</code> 定义段落</li>
+<li><code>&lt;a&gt;</code> 定义锚点(Anchor)，可以指向其它HTML文档或者本文档的某个位置</li>
+<li><code>&lt;img&gt;</code> 定义一张图片</li>
+<li><code>&lt;br&gt;</code> 手动换行，对于HTML中的连续空格或者换行，浏览器会将其视为一个空格，所以如果需要换行就需要使用<code>&lt;br&gt;</code>标签</li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/ref-byfunc.html">更多标签…</a></li>
+</ul>
+<h2 id="标签的属性"><a href="#标签的属性" class="headerlink" title="标签的属性"></a>标签的属性</h2><p><strong>HTML的标签几乎都有它自己的属性，属性写在开始标签中。</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;www.example.com&quot;</span>&gt;</span>一个链接<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>比如这个<code>&lt;a&gt;</code>标签，它有一个<code>href</code>属性，这个属性用来指定跳转的地址。<strong>属性总是以键值对的方式指定， 属性名&#x3D;属性值 。</strong></p>
+<h3 id="标签通用的属性："><a href="#标签通用的属性：" class="headerlink" title="标签通用的属性："></a>标签通用的属性：</h3><ul>
+<li>class 给标签分配一个类名</li>
+<li>id 给标签分配一个id</li>
+<li>style 指定标签的样式属性</li>
+<li>title 指定标签的附加信息（鼠标悬浮在标签内容上时显示）<br> -<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/ref-standardattributes.html">更多标签属性…</a></li>
+</ul>
+<h2 id="HTML基本标签的使用"><a href="#HTML基本标签的使用" class="headerlink" title="HTML基本标签的使用"></a>HTML基本标签的使用</h2><p>HTML中有大量的标签用于描述各种各样的内容，文本，图片，视频等，我们先从文本开始。</p>
+<h3 id="文本格式化"><a href="#文本格式化" class="headerlink" title="文本格式化"></a>文本格式化</h3><ul>
+<li><code>&lt;b&gt;</code> 可以将文本<strong>加粗</strong></li>
+<li><code>&lt;strong&gt;</code> 强调文本，默认的显示效果和<code>&lt;b&gt;</code><b>加粗</b>是一样的。 </li>
+<li><code>&lt;i&gt;</code> 将文字变成<em>斜体</em></li>
+<li><code>&lt;sub&gt;</code> 定义<sub>下标文字</sub></li>
+<li><code>&lt;sup&gt;</code> 定义<sup>上标文字</sup></li>
+<li><code>&lt;ins&gt;</code> 定义<ins>插入字</ins></li>
+<li><code>&lt;del&gt;</code> 定义<del>删除字</del></li>
+<li><code>&lt;abbr&gt;</code> 定义<abbr title="也就是这种效果">缩写</abbr>，通过标签的<code>title</code>属性定义全称。</li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/html/html-formatting.html/">更多标签</a></li>
+</ul>
+<p>单就从默认的显示效果上来说的话，<code>&lt;b&gt;</code>和<code>&lt;strong&gt;</code>是一样的。它们的区别体现在，用<code>&lt;strong&gt;</code>修饰的文本除了在视觉上有了加粗效果外，还有对其中的文本加上强调的意义，这有利于屏幕阅读器理解内容；而<code>&lt;b&gt;</code>标签仅仅是给修饰的文本带上加粗效果。</p>
+<h3 id="lt-a-gt-Anchor"><a href="#lt-a-gt-Anchor" class="headerlink" title="&lt;a&gt; Anchor"></a><code>&lt;a&gt;</code> Anchor</h3><p>超链接可以说是HTML最突出的特点了，使用它可以把众多的网页连接在一起。<br><code>&lt;a href=&quot;https://www.gogle.com&quot;&gt;Google&lt;/a&gt;</code> 定义了一个到Google的超链接，<code>&lt;a&gt;</code>标签之间的内容不一定是文本，也可以是图片等。</p>
+<p><code>target</code>，超链接的<code>target</code>属性用于定义浏览器打开超链接的方式；<br><code>_blank</code>值表示新开一个标签页打开，，<code>_self</code>表示在当前标签页打开。</p>
+<ul>
+<li><p><a href = "https://www.baidu.com/" target="_black">_blank打开</a></p>
+</li>
+<li><p><a href = "https://www.baidu.com/" target="_self">_self打开</a></p>
+</li>
+</ul>
+<p>超链接除了导向其它<code>HTML</code>页面，还能定位到本文档的某个位置。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span> = <span class="hljs-string">&quot;top&quot;</span>&gt;</span>顶部<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 如果想要使 a 标签跳转到 h1，需要给 h1 自定义一个 id 属性，</span><br><span class="hljs-comment">任何把 a 标签的 href 属性写出 #&#x27;h1的id&#x27; 就可以了 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span> = <span class="hljs-string">&quot;#top&quot;</span>&gt;</span>返回顶部<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><a href="#HTML%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE%E7%9A%84%E4%BD%BF%E7%94%A8">返回 h1</a></p>
+<h2 id="HTML-中的-head"><a href="#HTML-中的-head" class="headerlink" title="HTML 中的 head"></a>HTML 中的 head</h2><p>前面提到过，<code>&lt;head&gt;</code>标签对中的内容，是用来描述网页的，而不是像<code>&lt;body&gt;</code>那样显示在页面上。</p>
+<p><code>&lt;head&gt;</code>中常见的标签</p>
+<ul>
+<li><code>title</code>定义文档显示在浏览器顶部的标题</li>
+<li><code>link</code> 用于引用外部文件，比如引入外部css或者外部js文件，也可以用它在<code>head</code>中引入一张图片。这张图片将作为网页图标显示。</li>
+<li><code>seyle</code>定义文档内部的css样式</li>
+<li><code>script</code>定义网页的脚本文件</li>
+<li><code>meta</code> meta定义网页的’元数据’，用于描述网页文件的数据比如定义网页的作者、字符集、优化网页在搜索引擎中的显示效果</li>
+</ul>
+<h2 id="HTML-和-CSS"><a href="#HTML-和-CSS" class="headerlink" title="HTML 和 CSS"></a>HTML 和 CSS</h2><p>通过 css 我们可以修改自定义 html 标签的外观，css 可以和 html文件定义在一起，还可以单独放在一个文件里面然后引入。</p>
+<h3 id="内联样式"><a href="#内联样式" class="headerlink" title="内联样式"></a>内联样式</h3><p>内联样式是直接把css效果和html标签定义在一起，是一种比较方便的做法。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;color: red;text-align: center;&quot;</span>&gt;</span>标题<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>通过<strong>标签的style属性</strong>就能定义标签的css样式，css值则是<strong>键值对</strong>的形式。</p>
+<h3 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h3><p>将标签中的css属性从标签中抽出来，<strong>定义在<code>&lt;style&gt;</code>标签中。</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-tag">p</span> &#123;</span><br><span class="language-css">    <span class="hljs-attribute">color</span>:blue;</span><br><span class="language-css">    &#125;</span><br><span class="language-css"><span class="hljs-selector-tag">h1</span> &#123;</span><br><span class="language-css">    <span class="hljs-attribute">color</span>: red;</span><br><span class="language-css">    <span class="hljs-attribute">text-align</span>:center;</span><br><span class="language-css">&#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>抽离出来后通过css选择器选中标签，然后定义它的属性。</p>
+<h3 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h3><p>这是最理想的方式，<strong>方便维护</strong>。将<strong>css属性定义在一个单独的文件</strong>里面，然后通过<code>&lt;link&gt;</code>标签引入就行。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;cssfile.css&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><code>href</code>属性就是css文件的位置。</p>
+<h2 id="HTML和JS"><a href="#HTML和JS" class="headerlink" title="HTML和JS"></a>HTML和JS</h2><p>脚本是HTML的灵魂，通过一对<code>&lt;script&gt;</code>标签就可以定义js文件了。和css一样，脚本文件也推荐定义在一个单独的文件里面， 不过js是指定<code>&lt;script&gt;</code>的<code>src</code>属性来引入外部js文件。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>本地js<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">scr</span>=<span class="hljs-string">&quot;外部js文件.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="HTML布局"><a href="#HTML布局" class="headerlink" title="HTML布局"></a>HTML布局</h2><p>HTML标签有两种类型，一种是块级元素，一种是内联元素。<strong>块级元素会占满整行，然后高度包裹自身。因此块级元素会带有类似换行的效果。</strong>块级元素的典型代表是<code>&lt;div&gt;</code>。</p>
+<p>而<strong>内联元素会紧接着上一个标签元素从左往右排列。</strong>内联元素的代表是<code>&lt;span&gt;</code>标签。</p>
+<h2 id="HTML表单"><a href="#HTML表单" class="headerlink" title="HTML表单"></a>HTML表单</h2><p>表单在网页中用于和用户交互。表单由<code>&lt;form&gt;</code>标签定义。</p>
+<p><code>&lt;form&gt;</code>有两个常用的属性</p>
+<ul>
+<li>action 指定发送表单到哪里，通常是一个链接。</li>
+<li>method 指定发送表单的方式，常见内容有<code>get</code>、<code>post</code>。</li>
+</ul>
+<h3 id="输入框"><a href="#输入框" class="headerlink" title="输入框"></a>输入框</h3><p>使用<code>&lt;input&gt;</code>标签定义一个输入标签，它是一个单标签，一个输入标签有很多类型。 <strong><code>&lt;input&gt;</code>还有一个<code>checked</code>属性，加上这个属性，在提交表单时就会要求改输入标签不为空。</strong></p>
+<p><code>input: &lt;input type=&quot;text&quot; name=&quot;inputtext&quot;&gt;</code></p>
+<ul>
+<li>文本输入框：<input type="text" name="inputtext"></li>
+<li>密码输入框：<input type="password" name="inputtext"></li>
+</ul>
+<p>把<code>&lt;input&gt;</code>标签的<code>type</code>属性定义为<code>text</code>就能生成一个文本输入框。改成<code>password</code>就能生成一个密码输入框，输入后里面的内容将显示为 * 号。</p>
+<h3 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h3><p>按钮同样也是使用<code>&lt;input&gt;</code>标签定义，只要修改下属性就行了。</p>
+<ul>
+<li>单选按钮 <code>&lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;male&quot;&gt;</code><br><input type="radio" name="sex" value="male">Male <input type="radio" name="sex" value="female">Female</li>
+<li>多选按钮 <code>&lt;input type=&quot;checkbox&quot; name=&quot;vehicle&quot; value=&quot;Bike&quot;&gt;</code><br>  <input type="checkbox" name="vehicle" value="Bike">Eat<input type="checkbox" name="vehicle" value="Car">Sleep</li>
+<li>提交按钮 <input type="submit" value="Submit"><br>  <code>&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;</code></li>
+</ul>
+<p>单选按钮使用<code>radio</code>，一组单选按钮<code>name</code>属性必须一样；多选使用<code>checkbox</code>。点击提交按钮将直接发送标签给指定的连接。</p>
+<h3 id="lable标签与表单"><a href="#lable标签与表单" class="headerlink" title="lable标签与表单"></a>lable标签与表单</h3><p>label标签让它将它自身包裹的值于表单元素关联起来，使用lable标签更有利于指出输入表单的内容。具体表现出来的效果就是，<strong>直接点击文本也能激活输入框。</strong></p>
+<p><label for="t1">带lable的输入框：</label><input id="t1" type="text"><br><code>&lt;label for=&quot;t1&quot;&gt;带lable的输入框：&lt;/label&gt;&lt;input id=&quot;t1&quot; type=&quot;text&quot;&gt;</code></p>
+<p>下面是一个完整的表单代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;demo_form.php&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;get&quot;</span>&gt;</span><br>  First name: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;fname&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br>  Last name: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;lname&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;提交&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="lt-iframe-gt"><a href="#lt-iframe-gt" class="headerlink" title="&lt;iframe&gt;"></a><code>&lt;iframe&gt;</code></h2><p>使用<code>&lt;iframe&gt;</code>标签可以定义一个指向其它html页面的框架。说简单点就是在html页面内部嵌套另一个html页面。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://www.runoob.com/&quot;</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;200px&quot;</span> </span><br><span class="hljs-tag"><span class="hljs-attr">height</span>=<span class="hljs-string">&quot;200px&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;ifremea&quot;</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://anothlink.com&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;ifremea&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<ul>
+<li>src 指定要加载页面的url</li>
+<li>freameborder 指定边框</li>
+</ul>
+<p>通过指定 <code>a</code> 标签的<code>target</code>属性为<code>&lt;iframe&gt;</code>的<code>name</code>属性，<strong>可以将 <code>a</code> 标签指向的页面加载到指定的<code>&lt;iframe&gt;</code>框架中</strong>。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%89%8D%E7%AB%AF/HTML/" class="category-chain-item">HTML</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
+      
+        <a href="/tags/HTML/" class="print-no-link">#HTML</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>关于HTML的标签</div>
+      <div>https://travelerentity.github.io/2021/07/关于HTML的标签/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>LinYn</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年7月11日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/07/CSS%E5%9F%BA%E7%A1%80/" title="CSS基础">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">CSS基础</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/07/HTML%E7%AE%80%E4%BB%8B/" title="HTML简介">
+                        <span class="hidden-mobile">HTML简介</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+
+  <div id="dark" onclick="switchDarkMode()"></div>
+  <!-- 自动判断切换暗黑模式 -->
+  <script>
+    var isNight = new Date().getHours() >= 22 || new Date().getHours() < 7; // 指定时间
+    // 依次判断 系统暗黑模式 指定时间 缓存 dark
+    if( matchMedia('(prefers-color-scheme: dark)').matches || isNight || localStorage.getItem('dark') === '1') {
+      if(!(isNight&&localStorage.getItem('noDark') === '1')) {
+        document.body.classList.add('dark');
+      }
+    }
+    document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?"🌙":"🌞";
+  </script>
+</body>
+</html>

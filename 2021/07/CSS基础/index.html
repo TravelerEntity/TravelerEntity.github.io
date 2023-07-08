@@ -1,0 +1,757 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="LinYn">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="css是一种定义网页外观的技术。css的中文名叫层叠样式表，css使用各种各样的样式来改变html标签原来的样子，同时多种样式也允许叠加在一个标签上。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS基础">
+<meta property="og:url" content="https://travelerentity.github.io/2021/07/CSS%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="css是一种定义网页外观的技术。css的中文名叫层叠样式表，css使用各种各样的样式来改变html标签原来的样子，同时多种样式也允许叠加在一个标签上。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://travelerentity.github.io/images/2021S2/css_index.png">
+<meta property="article:published_time" content="2021-07-15T02:48:11.000Z">
+<meta property="article:modified_time" content="2022-07-18T14:14:42.785Z">
+<meta property="article:author" content="LinYn">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="CSS">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://travelerentity.github.io/images/2021S2/css_index.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>CSS基础 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"travelerentity.github.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":60,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>LinYun</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="CSS基础"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-07-15 10:48" pubdate>
+          2021年7月15日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          5.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          45 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">CSS基础</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>css是一种定义网页外观的技术。css的中文名叫<strong>层叠样式表</strong>，css使用各种各样的样式来改变html标签原来的样子，<strong>同时多种样式也允许叠加在一个标签上</strong>。</p>
+<span id="more"></span>
+
+<p>css可以改变网页的外观，给网页加上动画，改变背景颜色等…</p>
+<h3 id="css语法"><a href="#css语法" class="headerlink" title="css语法"></a>css语法</h3><p>css使用选择器来选择一个或多个html标签，然后通过声明样式来加上各种各样的效果。每一条 css 以分号结束。</p>
+<p><img src="/images/2021S2/css_entity.jpg" srcset="/img/loading.gif" lazyload alt="一个 CSS"></p>
+<h3 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h3><p>在标签指定 id 或 class 属性后,就能给在 css 里使用选择器了。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css">    <span class="hljs-selector-id">#head1</span>&#123;</span><br><span class="language-css">        <span class="hljs-attribute">color</span>:red;</span><br><span class="language-css">    &#125;</span><br><span class="language-css">    <span class="hljs-selector-class">.head</span>&#123;</span><br><span class="language-css">        <span class="hljs-attribute">background-color</span>: blue;</span><br><span class="language-css">    &#125;</span><br><span class="language-css"></span><br><span class="language-css">    <span class="hljs-selector-tag">h1</span><span class="hljs-selector-class">.cla</span>&#123;</span><br><span class="language-css">        <span class="hljs-comment">/* 这个选择器选择 class 属性为 cla 的 h1 标签 */</span></span><br><span class="language-css">        <span class="hljs-attribute">color</span>:gray;</span><br><span class="language-css">    &#125;</span><br><span class="language-css"></span><br><span class="language-css">    <span class="hljs-selector-tag">p</span>&#123;</span><br><span class="language-css">        <span class="hljs-comment">/* 选中p标签 */</span></span><br><span class="language-css">    &#125;</span><br><span class="language-css">    <span class="hljs-selector-class">.head</span> <span class="hljs-selector-tag">p</span>&#123;</span><br><span class="language-css">        <span class="hljs-comment">/* 选中 class 属性为 head 内的 p 标签 */</span></span><br><span class="language-css">    &#125;</span><br><span class="language-css">    <span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.head</span>&#123;</span><br><span class="language-css">        <span class="hljs-comment">/* 选中带有 class 为 head 的p标签 */</span></span><br><span class="language-css">    &#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;head&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;head1&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><code>#head1</code>通过id选中<code>h1</code>，并指定它的字体颜色为红色，<code>.head</code>通过class选中<code>h1</code>，然后指定它的背景颜色为蓝色。</p>
+<h4 id="选择器优先级"><a href="#选择器优先级" class="headerlink" title="选择器优先级"></a>选择器优先级</h4><p><strong>前面提到过，使用css有三种方式，内联、内部、外部。假如它们都选中同一个标签，然后给它加上不同的颜色，这时将遵循就近原则，距离标签越近的css属性优先级越高。</strong></p>
+<p>此外，<strong>选择器还有根据精准度而生成的权重值</strong>。权重越大，优先级越高。比如，id选择器就比class选择器精度高，所有它的权重就大于class选择器。选择器权重值可以通过多个选择器叠加。</p>
+<p><strong>如果给样式加上<code>!important</code>这时选择器的优先级将最大化，</strong>将会覆盖其它选择器的样式。如果两个<code>!important</code>冲突的话，那么还是看谁的选择器权重大了。</p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/css-selectors.html">css选择器手册</a></p>
+<h4 id="组合选择器"><a href="#组合选择器" class="headerlink" title="组合选择器"></a>组合选择器</h4><p>多个选择器可以组合使用</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> <span class="hljs-selector-tag">p</span> &#123;<br>    <span class="hljs-comment">/* 后代选择器，将会选中所以div标签以及div子标签中的所有p元素 */</span><br>&#125;<br><br><span class="hljs-selector-tag">div</span>&gt;<span class="hljs-selector-tag">p</span> &#123;<br>    <span class="hljs-comment">/* 子元素选择器，选中所有嵌套在div中的p元素 */</span><br>&#125;<br><br><span class="hljs-selector-tag">div</span>+<span class="hljs-selector-tag">p</span>&#123;<br>    <span class="hljs-comment">/* 相邻同级选择器，选中跟在div后面的p元素 */</span><br>&#125;<br><br><span class="hljs-selector-tag">div</span>~<span class="hljs-selector-tag">p</span>&#123;<br>    <span class="hljs-comment">/* 同级选择器，选中所有div的同级p元素 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h4><p>属性选择器可以选择带有特性属性的html标签</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-attr">[title]</span>&#123;<br>    <span class="hljs-comment">/* 选中所有带有title属性的元素 */</span><br>&#125;<br><br><span class="hljs-selector-attr">[title=head]</span>&#123;<br>    <span class="hljs-comment">/* 选中所有title属性值为&#x27;head&#x27;的元素 */</span><br>&#125;<br><br><span class="hljs-selector-attr">[title~=head]</span>&#123;<br>    <span class="hljs-comment">/* 选中title属性中包含head单词的元素 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h4><p>使用特殊的关键字来选中元素，这就是伪类。一般用于选中整个标签，它针对的是出于某种特定状态的元素，这个状态是动态变化的。</p>
+<blockquote>
+<p>伪类选择元素基于的是当前元素处于的状态，或者说元素当前所具有的特性，而不是元素的id、class、属性等静态的标志。由于状态是动态变化的，所以一个元素达到一个特定状态时，它可能得到一个伪类的样式；当状态改变时，它又会失去这个样式。由此可以看出，它的功能和class有些类似，但它是基于文档之外的抽象，所以叫伪类。——<em>Leon</em></p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 链接伪类 */</span><br>    <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:link</span> &#123;<br>        <span class="hljs-comment">/* 选中所有没有访问过的链接 */</span><br>    &#125; <br>    <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:visited</span> &#123;<br>        <span class="hljs-comment">/* 选中访问过的链接 */</span><br>    &#125;<br>    <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> &#123;<br>        <span class="hljs-comment">/* 鼠标悬浮时的链接 */</span><br>    &#125;<br>    <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:active</span> &#123;<br>        <span class="hljs-comment">/* 点击时的链接 */</span><br>    &#125;<br><span class="hljs-comment">/* 使用链接伪类时，注意遵循上面的顺序 */</span><br><br><br><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:first</span>-child&#123;<br>    <span class="hljs-comment">/* 选中p标签，它需要是某个标签的子元素，并且是第一个 */</span><br>&#125;<br><br><span class="hljs-selector-tag">p</span> &gt; <span class="hljs-selector-tag">i</span><span class="hljs-selector-pseudo">:first</span>-child<br>&#123;<br>    <span class="hljs-comment">/* 选中所有p标签内第一个i元素 */</span><br>&#125;<br><br><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:first</span>-child <span class="hljs-selector-tag">i</span><br>&#123;<br>    <span class="hljs-comment">/* 从上面的例子中猜一下 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/css/css-pseudo-classes.html">更多的伪类选择器…</a></p>
+<h4 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h4><p>伪元素选择器通常选中标签内的某些内容，比如第一行，第一个字母等</p>
+<blockquote>
+<p>与伪类针对特殊状态的元素不同的是，伪元素是对元素中的特定内容进行操作，它所操作的层次比伪类更深了一层，也因此它的动态性比伪类要低得多。实际上，设计伪元素的目的就是去选取诸如元素内容第一个字（母）、第一行，选取某些内容前面或后面这种普通的选择器无法完成的工作。它控制的内容实际上和元素是相同的，但是它本身只是基于元素的抽象，并不存在于文档中，所以叫伪元素。——<em>Leon</em></p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:first</span>-line&#123;<br>    <span class="hljs-comment">/* 选中p标签内的第一行 */</span><br>&#125;<br><br><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:first</span>-letter&#123;<br>    <span class="hljs-comment">/* 选中p标签内第一个字母，first-letter只能用于块级元素 */</span><br>&#125;<br><br><br></code></pre></td></tr></table></figure>
+<h3 id="CSS修改文本"><a href="#CSS修改文本" class="headerlink" title="CSS修改文本"></a>CSS修改文本</h3><p>css可以用来修改文字的颜色，排版等。</p>
+<h4 id="文本颜色"><a href="#文本颜色" class="headerlink" title="文本颜色"></a>文本颜色</h4><p>使用 &#96;body{color: red}属性可以修改文本颜色值，颜色值可以是它的名字、十六进制色或一个RGB值。</p>
+<h4 id="文本对齐方式"><a href="#文本对齐方式" class="headerlink" title="文本对齐方式"></a>文本对齐方式</h4><p><code>text-align</code>属性来定义文本的对齐方式，<strong>有center（居中）、justify（两端对齐）、right（右对齐）值。</strong><br>比如：<code>body&#123;text-align:center&#125;</code></p>
+<h4 id="文本装饰"><a href="#文本装饰" class="headerlink" title="文本装饰"></a>文本装饰</h4><p>使用<code>text-decoration</code>来修改文本的装饰，实际使用主要是对隐藏超链接的下划线。可以使用，<code>overline（上划线），light-throug（中间线）和underline（下划线）</code>。<br><a target="_blank" rel="noopener" href="https://www.runoob.com/css/css-text.html">更多文本属性参考</a></p>
+<h3 id="CSS字体"><a href="#CSS字体" class="headerlink" title="CSS字体"></a>CSS字体</h3><p>字体属性可以修改加粗，大小等</p>
+<h4 id="改变字体"><a href="#改变字体" class="headerlink" title="改变字体"></a>改变字体</h4><p>使用<code>font-family</code>可以定义文本的字体，字体可以使用本地字库或者在线字库，常见的字体值有：<code>Serif, Times, Monospace</code>等。</p>
+<h4 id="字体大小"><a href="#字体大小" class="headerlink" title="字体大小"></a>字体大小</h4><p><code>font-size</code>指定文本的大小，可以使用px,em,rem三种单位。第一个是绝对单位，后两个是相对单位，转换方式为1em≈16px。<strong>推荐使用相对单位以适应不同的浏览器窗口尺寸。</strong></p>
+<h3 id="CSS列表"><a href="#CSS列表" class="headerlink" title="CSS列表"></a>CSS列表</h3><p>对于列表，css可以修改它列表项的样式，比如改成图片，取消列表项等。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">ul</span><br>&#123;<br>    &lt;!-- type值表示列表项外观，<span class="hljs-attribute">none</span>表示隐藏列表项 --&gt;<br>    <span class="hljs-attribute">list-style-type</span>: none;<br>    &lt;!-- 在 url 中填入图片地址就能把列表项改成图片 --&gt;<br>    <span class="hljs-attribute">list-style-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&#x27;sqpurple.gif&#x27;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="CSS盒模型"><a href="#CSS盒模型" class="headerlink" title="CSS盒模型"></a>CSS盒模型</h3><p>每一个块级元素都是一个盒子，如图所示，它们都有内容区域、边框和内外边距。<br><img src="/images/2021S2/css_box.png" srcset="/img/loading.gif" lazyload alt="盒模型"></p>
+<p><strong>margin越大，每个html元素之间的间隔就越大；Margin定义元素之间的距离。</strong></p>
+<p><strong>padding越大，元素就会越小;padding定义元素边框到元素实际显示内容的距离。</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">h1</span>&#123;<br>    <span class="hljs-comment">/* 这会把上下边距各设置为2em，左右各设置为4em，顺序为从上开始顺时针 */</span><br>    <span class="hljs-attribute">margin</span>: <span class="hljs-number">2em</span> <span class="hljs-number">4em</span> <span class="hljs-number">2em</span> <span class="hljs-number">4em</span>;<br><br>    <span class="hljs-comment">/* 如果直填一个值，将会把全部padding设置为2em */</span><br>    <span class="hljs-attribute">padding</span>: <span class="hljs-number">2em</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>margin 的单位可以除了设置为具体的长度外，还可以设置为百分比。margin 还可用设置为负值<del>，黑洞?</del></p>
+<p>margin区域没有背景颜色</p>
+<h3 id="CSS边框"><a href="#CSS边框" class="headerlink" title="CSS边框"></a>CSS边框</h3><p>通过<code>border</code>属性即可指定元素的边框属性</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">h1</span>&#123;<br>    <span class="hljs-comment">/* border-style指定边框的样式 */</span><br>    <span class="hljs-attribute">border-style</span>: solid;<br><br>    <span class="hljs-comment">/* 更常用的做法，分别设置宽度，颜色，样式 */</span><br>    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> red solid;<br><br>    <span class="hljs-comment">/* 还可用指定边框的圆角属性，属性越大，边框越远 */</span><br>    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;<br><br>    <span class="hljs-comment">/* 边框也支持单独设置某一边 */</span><br>    <span class="hljs-attribute">border-top-style</span>: dotted;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="补充——CSS轮廓"><a href="#补充——CSS轮廓" class="headerlink" title="补充——CSS轮廓"></a>补充——CSS轮廓</h4><p>在布局中我们有时候会使用边框来凸显某个元素，不过更适合的方法是使用轮廓实现，<strong>轮廓不会增加元素的宽度或者宽度，轮廓包裹在元素的边框外面。</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-tag">h1</span>&#123;<br>    <span class="hljs-comment">/* 这个将在元素边框外叠加一层红色单实线1px的边框 */</span><br>    <span class="hljs-attribute">outline</span>: red solid <span class="hljs-number">1px</span>;<br>    <span class="hljs-comment">/* 轮廓和边框很相似，上面这个参数表和边框的参数表正好相反 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="CSS元素的显示"><a href="#CSS元素的显示" class="headerlink" title="CSS元素的显示"></a>CSS元素的显示</h3><p>通过display属性可以设置元素的显示方式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">h1</span>&#123;<br>    <span class="hljs-comment">/* none 和 hidden 都能隐藏元素，</span><br><span class="hljs-comment">    不过不同的是，hidden 后的元素还是会占据布局控件，而 none不会*/</span><br>    <span class="hljs-attribute">display</span>: none;<br>    <span class="hljs-attribute">visibility</span>: hidden;<br><br>    <span class="hljs-comment">/* block 和 inline 能让元素在块级和内联直接切换 */</span><br>    <span class="hljs-attribute">display</span>: block;<br>    <span class="hljs-attribute">display</span>: inline;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="CSS定位"><a href="#CSS定位" class="headerlink" title="CSS定位"></a><a target="_blank" rel="noopener" href="https://www.runoob.com/css/css-positioning.html">CSS定位</a></h3><p>CSS一共有5中定位方式，通过position属性修改元素的定位属性。</p>
+<p><strong>首先是默认的static定位方式，这时定位将遵循默认的规则，块级元素换行显示，行内元素紧贴上一个元素显示。</strong></p>
+<h4 id="Relative定位"><a href="#Relative定位" class="headerlink" title="Relative定位"></a>Relative定位</h4><p><strong>相对定位，这里的相对指的是相对元素本来应该在文档流中的位置。在我们修改了元素的默认定位属性后</strong>，比如这里改成了相对定位，就可以通过<code>top,right,bottom,left</code>四个属性调整元素的位置。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">h1</span>&#123;<br>    <span class="hljs-attribute">position</span>: relative;<br>    <span class="hljs-attribute">top</span>: <span class="hljs-number">20em</span>;<br>    <span class="hljs-attribute">right</span>: <span class="hljs-number">5em</span>;<br>    <span class="hljs-attribute">bottom</span>: <span class="hljs-number">5em</span>;<br>    <span class="hljs-attribute">left</span>: <span class="hljs-number">5em</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这里通过相对定位，将把从元素到top的距离增加20em。其它的几个同理。</p>
+<h4 id="Absolute绝对定位"><a href="#Absolute绝对定位" class="headerlink" title="Absolute绝对定位"></a>Absolute绝对定位</h4><p><strong>绝对定位，绝对定位和相对定位作用一样，只是绝对定位的参照物是最近的已经修改的定位的元素（position!&#x3D;static)，如果没有默认参照html。</strong></p>
+<p>所以很多种情况下，绝对定位呈现出来的效果都像是参照浏览器窗口定位似的。</p>
+<p>实际使用时，通常会在绝对定位的元素外套一个相对定位的<code>div</code>来组合定位</p>
+<h4 id="Fixed"><a href="#Fixed" class="headerlink" title="Fixed"></a>Fixed</h4><p>固定定位可以使某个元素固定在浏览器的某个位置，<strong>相对浏览器窗口定位。</strong></p>
+<h4 id="Sticky"><a href="#Sticky" class="headerlink" title="Sticky"></a>Sticky</h4><p>Sticky定位是前面两种定位<code>relative</code>和<code>fixed</code>的结合。当元素在浏览器的可视范围时，它相对正常文档流定位，当元素快要离开浏览器可视范围时，它将呈现出<code>fixed</code>的定位行为，固定在窗口某个位置。</p>
+<p>简言之，<strong>Sticky定位可以使元素永远显示在窗口某个位置。</strong></p>
+<h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><p>每个元素都有一个<code>z-index</code>属性，原来设置元素的z轴高度，很明显高度越高的元素将显示在其它元素的上面。</p>
+<p>通过<code>overflow</code>属性控制元素内容在溢出时的处理方式，可选值为<code>scroll,hidden,auto,visible(默认)</code>，visible表示元素在溢出时直接按照正常方式显示。</p>
+<h3 id="CSS的浮动"><a href="#CSS的浮动" class="headerlink" title="CSS的浮动"></a>CSS的浮动</h3><p><strong>少用float，float设计出来的目的是用于呈现图片和文字混排的功能，而非布局。</strong></p>
+<p>通过元素的float属性，可以使元素向左或者向右浮动。带有浮动属性的元素会一边靠近，直到margin碰到</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.float</span>&#123;<br>    <span class="hljs-attribute">float</span>：<span class="hljs-attribute">right</span>;<br>    <span class="hljs-comment">/* 此外属性值还可以是</span><br><span class="hljs-comment">    left,</span><br><span class="hljs-comment">    none,</span><br><span class="hljs-comment">    inherit 继承父元素的浮动属性</span><br><span class="hljs-comment">    */</span><br>    <br>    <span class="hljs-comment">/* 清除浮动效果 */</span><br>    <span class="hljs-attribute">clear</span>: both;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>浮动元素的有一个高度塌陷的特性，浮动元素的<code>height</code>值为0。</p>
+<p>要清除float效果，使用clear属性。</p>
+<h3 id="CSS对齐"><a href="#CSS对齐" class="headerlink" title="CSS对齐"></a>CSS对齐</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.center</span>&#123;<br>    <span class="hljs-comment">/* 实现元素居中对齐效果，仅对块级元素有效 */</span><br>    <span class="hljs-attribute">margin</span>: auto;<br><br>    <span class="hljs-comment">/* 元素内文本居中对齐 */</span><br>    <span class="hljs-attribute">text-align</span>: center;<br>    <span class="hljs-comment">/* 除了上面两个之外，还可以使用float和position来实现对齐效果 */</span><br><br><br>    <span class="hljs-comment">/* 元素垂直对齐 */</span><br>    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;<br><br>    <span class="hljs-comment">/* 设置行高也能实现垂直对齐，属性值为父元素的高度 */</span><br>    <span class="hljs-attribute">line-height</span>: x px;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="CSS媒体类型"><a href="#CSS媒体类型" class="headerlink" title="CSS媒体类型"></a>CSS媒体类型</h3><p>媒体类型的使用可以使我们的网页在面对不同媒介时呈现出不同的效果。使用<code>@media</code>设置媒体属性效果。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-keyword">@media</span> screen&#123;<br>    <span class="hljs-comment">/* 显示在屏幕上的效果 */</span><br>    <span class="hljs-attribute">color</span> : pink;<br>&#125;<br><span class="hljs-keyword">@media</span> print&#123;<br>    <span class="hljs-comment">/* 在打印机上的效果 */</span><br>    <span class="hljs-attribute">color</span> : black;<br>&#125;<br><span class="hljs-keyword">@media</span> screen,print&#123;<br>    <span class="hljs-comment">/* 多选 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/css/css-mediatypes.html">更多的媒体设备类型…</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%89%8D%E7%AB%AF/CSS/" class="category-chain-item">CSS</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
+      
+        <a href="/tags/CSS/" class="print-no-link">#CSS</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>CSS基础</div>
+      <div>https://travelerentity.github.io/2021/07/CSS基础/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>LinYn</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年7月15日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/07/%E9%A3%8E%E5%B9%B3%E6%B5%AA%E9%9D%99%E7%9A%84%E6%98%A5%E5%92%8C%E5%A4%8F/" title="宁静春夏——2021年中总结">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">宁静春夏——2021年中总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/07/%E5%85%B3%E4%BA%8EHTML%E7%9A%84%E6%A0%87%E7%AD%BE/" title="关于HTML的标签">
+                        <span class="hidden-mobile">关于HTML的标签</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+
+  <div id="dark" onclick="switchDarkMode()"></div>
+  <!-- 自动判断切换暗黑模式 -->
+  <script>
+    var isNight = new Date().getHours() >= 22 || new Date().getHours() < 7; // 指定时间
+    // 依次判断 系统暗黑模式 指定时间 缓存 dark
+    if( matchMedia('(prefers-color-scheme: dark)').matches || isNight || localStorage.getItem('dark') === '1') {
+      if(!(isNight&&localStorage.getItem('noDark') === '1')) {
+        document.body.classList.add('dark');
+      }
+    }
+    document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark")?"🌙":"🌞";
+  </script>
+</body>
+</html>
