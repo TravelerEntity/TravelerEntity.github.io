@@ -16,27 +16,27 @@
   <meta name="author" content="LinYun">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Java 基础的重要知识">
+    <meta name="description" content="由于 Linux 虚拟机的 IP 默认使用 DHCP，地址每隔一段时间就会改变。IP 一边，我们的远程连接软件 Shell 和 Mysql 的地址都要重新设置。这对我们造成了很大的麻烦，所以我们需要为它设置一个静态 IP。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java 基础的重要知识点">
-<meta property="og:url" content="https://travelerentity.github.io/2023/Java-%E5%9F%BA%E7%A1%80%E7%9A%84%E9%87%8D%E8%A6%81%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
+<meta property="og:title" content="Linux 配置静态 IP">
+<meta property="og:url" content="https://travelerentity.github.io/2023/Linux-%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81-IP/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Java 基础的重要知识">
+<meta property="og:description" content="由于 Linux 虚拟机的 IP 默认使用 DHCP，地址每隔一段时间就会改变。IP 一边，我们的远程连接软件 Shell 和 Mysql 的地址都要重新设置。这对我们造成了很大的麻烦，所以我们需要为它设置一个静态 IP。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://travelerentity.github.io/images/2023/before_swap.png">
-<meta property="og:image" content="https://travelerentity.github.io/images/2023/after_swap.png">
-<meta property="article:published_time" content="2023-07-08T08:52:20.000Z">
-<meta property="article:modified_time" content="2023-07-09T14:43:22.055Z">
+<meta property="og:image" content="https://travelerentity.github.io/images/2023/vnet_config.png">
+<meta property="article:published_time" content="2023-07-09T14:41:21.000Z">
+<meta property="article:modified_time" content="2023-07-10T02:19:20.748Z">
 <meta property="article:author" content="LinYun">
 <meta property="article:tag" content="Java">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://travelerentity.github.io/images/2023/before_swap.png">
+<meta name="twitter:image" content="https://travelerentity.github.io/images/2023/vnet_config.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Java 基础的重要知识点 - Hexo</title>
+  <title>Linux 配置静态 IP - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -202,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Java 基础的重要知识点"></span>
+            <span id="subtitle" data-typed-text="Linux 配置静态 IP"></span>
           
         </div>
 
@@ -213,8 +213,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-07-08 16:52" pubdate>
-          2023年7月8日 下午
+        <time datetime="2023-07-09 22:41" pubdate>
+          2023年7月9日 晚上
         </time>
       </span>
     
@@ -226,7 +226,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.9k 字
+          1.3k 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
           <!-- compatible with older versions-->
-          16 分钟
+          12 分钟
         
       </span>
     
@@ -283,34 +283,21 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Java 基础的重要知识点</h1>
+            <h1 id="seo-header">Linux 配置静态 IP</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Java 基础的重要知识</p>
-<span id="more"></span>
+                <p>由于 Linux 虚拟机的 IP 默认使用 DHCP，地址每隔一段时间就会改变。IP 一边，我们的远程连接软件 Shell 和 Mysql 的地址都要重新设置。这对我们造成了很大的麻烦，所以我们需要为它设置一个静态 IP。</p>
+<span id="more"></span> 
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs terminal">软件背景<br>操作系统 = CentOS 7<br>Shell = FinalShell<br></code></pre></td></tr></table></figure>
 
-<h1 id="Java-的变量是值传递还是引用传递？"><a href="#Java-的变量是值传递还是引用传递？" class="headerlink" title="Java 的变量是值传递还是引用传递？"></a>Java 的变量是值传递还是引用传递？</h1><p>我记得在最开始学习 Java 的时候，关于变量传参的方式是这样定义的： </p>
-<blockquote>
-<p>对于基本数据类型 (int, double, long, float) Java 是值传递，而对于引用数据类型 (Array, String, List) Java 是引用传递，也就是直接传递变量地址。</p>
-</blockquote>
-<h2 id="值传递的例子"><a href="#值传递的例子" class="headerlink" title="值传递的例子"></a>值传递的例子</h2><p>不过，最近看了<a target="_blank" rel="noopener" href="https://javaguide.cn/java/basis/why-there-only-value-passing-in-java.html">一篇文章</a>发现事实并非如此。<strong>先说结论：在 Java 中，所有变量都是值传递，无论是基本类型还是引用类型都是如此。</strong> 那么现在问题来了，既然 Java 中引用类型也是值传递，为什么方法内的操作变量会影响到外部的变量呢？看下方这段代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>     <span class="hljs-type">int</span>[] arr = &#123; <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span> &#125;;<br>     System.out.println(<span class="hljs-string">&quot;before change arr[0] = &quot;</span>+ arr[<span class="hljs-number">0</span>]);<br>     change(arr);<br>     System.out.println(<span class="hljs-string">&quot;after change arr[0] = &quot;</span>+ arr[<span class="hljs-number">0</span>]);<br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">change</span><span class="hljs-params">(<span class="hljs-type">int</span>[] array)</span> &#123;<br>     <span class="hljs-comment">// 将数组的第一个元素变为0</span><br>     array[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
-<p>输出结果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs terminal">before change arr[0] = 1<br>after change arr[0] = 0<br></code></pre></td></tr></table></figure>
-<p>可以看到，我们在 <code>change</code> 方法中对 <code>array</code> 进行修改后，函数外也看到了效果。为什么值传递呈现了引用传递的效果呢？关键点在于，Java 中传递的是<strong>变量地址值的副本</strong>。引用类型的参数在传递时，会将引用的地址值，复制一份传递到方法内部。前面 <code>change</code> 函数接收的实际上是 <code>arr</code> 地址的副本。在 <code>change</code> 方法内部，<code>arr</code> 和 <code>array</code> 两个变量都指向了同一个地址。所以，方法 <code>change</code> 对数组的修改会同步到方法外部。</p>
-<h2 id="引用传递的例子"><a href="#引用传递的例子" class="headerlink" title="引用传递的例子"></a>引用传递的例子</h2><p>我们再看一个例子</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> &#123;<br>    <span class="hljs-keyword">private</span> String name;<br>   <span class="hljs-comment">// 省略构造函数、Getter&amp;Setter方法</span><br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Person</span> <span class="hljs-variable">xiaoZhang</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;小张1&quot;</span>);<br>        <span class="hljs-type">Person</span> <span class="hljs-variable">xiaoLi</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;小李2&quot;</span>);<br>        swap(xiaoZhang, xiaoLi);<br>        System.out.println(<span class="hljs-string">&quot;xiaoZhang:&quot;</span> + xiaoZhang.getName());<br>        System.out.println(<span class="hljs-string">&quot;xiaoLi:&quot;</span> + xiaoLi.getName());<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">swap</span><span class="hljs-params">(Person person1, Person person2)</span> &#123;<br>        <span class="hljs-comment">// swap 前 xz = p1，xl = p2</span><br>        <span class="hljs-type">Person</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> person1;<br>        person1 = person2;<br>        person2 = temp;<br><br>        <span class="hljs-comment">// swap 后，xz = xl = p2 ，xl = xz = p1</span><br>        System.out.println(<span class="hljs-string">&quot;person1:&quot;</span> + person1.getName());<br>        System.out.println(<span class="hljs-string">&quot;person2:&quot;</span> + person2.getName());<br><br>        person1.setName(<span class="hljs-string">&quot;person1 xl &quot;</span>);<br>    &#125;<br></code></pre></td></tr></table></figure>
-<p>最终输出结果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs terminal">person1:xiaoLi = 小李2<br>person2:xiaoZhang = 小张1<br>xiaoZhang:xiaoZhang = 小张1<br>xiaoLi:person1 xl <br></code></pre></td></tr></table></figure>
-
-<p>这个例子中，xiaoZhang &#x3D; 小张1，xiaoLi &#x3D; 小李2，我们在 swap 函数中交换了它们两个然后并打印。从输出结果中可以看出，在函数体内，它们两个确实是已经交换。但在函数体外部再打印，它们的值却没有任何变化。这也就印证了， Java 中引用变量传递的是地址的副本，而不是地址本身这个理论了。<br><img src="/images/2023/before_swap.png" srcset="/img/loading.gif" lazyload alt="swap 前"><br>我们在方法中交换两个变量，也只是交换的两个副本变量指向的地址，函数外部变量指向的地址的没有任何影响。<br><img src="/images/2023/after_swap.png" srcset="/img/loading.gif" lazyload alt="swap 后"></p>
-<p>这种方式的好处在于，方法内部的操作不会莫名其妙地对外部造成影响，减少意想不到的结果。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>Java 中，变量的传递都是值传递，不存在引用传递。</li>
-<li>对于引用变量，在传递时，是先复制的引用变量的地址，然后再传递。</li>
-</ul>
+<h1 id="Vmware-设置"><a href="#Vmware-设置" class="headerlink" title="Vmware 设置"></a>Vmware 设置</h1><p>首先我们需要在 VMWare 中记下我们的子网 IP，并把 VMnet 设置为 NAT 和主机共享 IP 模式。<br><img src="/images/2023/vnet_config.png" srcset="/img/loading.gif" lazyload alt="虚拟网络编辑器"></p>
+<h1 id="虚拟机设置"><a href="#虚拟机设置" class="headerlink" title="虚拟机设置"></a>虚拟机设置</h1><p>然后在切换到 Linux ，使用 <code>vim /etc/sysconfig/network-scripts/ifcfg-ens33</code> 编辑配置文件（不同的硬件或系统，最后一个文件可能不一样）。将 <code>BOOTPROTO</code> 项设置为 static 静态 IP，同时在下方追加配置 IP 地址、子网掩码、网关和 DNS。</p>
+<figure class="highlight profile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs profile">BOOTPROTO=static  # static ip addr<br>IPADDR=<span class="hljs-number">192.168</span><span class="hljs-number">.19</span><span class="hljs-number">.100</span>  # ip address<br>NETMASK=<span class="hljs-number">255.255</span><span class="hljs-number">.255</span><span class="hljs-number">.0</span>  # subnet mask<br>GATEWAY=<span class="hljs-number">192.168</span><span class="hljs-number">.19</span><span class="hljs-number">.2</span>  # gate way<br>DNS1=<span class="hljs-number">192.168</span><span class="hljs-number">.19</span><span class="hljs-number">.2</span>  # dnDEVICE=ens33<br></code></pre></td></tr></table></figure>
+<p><strong>IP 地址的网络号需要和虚拟网络编辑器中的子网 IP 相同，网关和 DNS 的网络号也一样和子网 IP 一样，只是主机号为 2。</strong></p>
+<p>配置完成后，保存退出。使用 <code>systemctl restart network</code> 重启网络服务。不出意外的话，我们的 Shell 终端也会断开连接。<br>主机使用 <code>ping 192.168.19.100</code> 测试和虚拟机是否连通，如果正常重新配置 Shell 的连接 IP 即可。<br>重新连接之后，使用 <code>ip addr</code> 查看 IP 地址，可以发现已经修改完成。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost ~]# ip addr<br>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000<br>    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br>    inet 127.0.0.1/8 scope host lo<br>       valid_lft forever preferred_lft forever<br>    inet6 ::1/128 scope host <br>       valid_lft forever preferred_lft forever<br>2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000<br>    link/ether 00:0c:29:06:35:5b brd ff:ff:ff:ff:ff:ff<br>    inet 192.168.19.100/24 brd 192.168.19.255 scope global noprefixroute ens33<br>       valid_lft forever preferred_lft forever<br>    inet6 fe80::c4c1:926b:6c4b:5d22/64 scope link noprefixroute <br>       valid_lft forever preferred_lft forever<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -319,11 +306,34 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%90%8E%E7%AB%AF/" class="category-chain-item">后端</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
         <a href="/tags/Java/" class="print-no-link">#Java</a>
+      
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
       
     </div>
   
@@ -335,8 +345,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Java 基础的重要知识点</div>
-      <div>https://travelerentity.github.io/2023/Java-基础的重要知识点/</div>
+      <div>Linux 配置静态 IP</div>
+      <div>https://travelerentity.github.io/2023/Linux-配置静态-IP/</div>
     </div>
     <div class="license-meta">
       
@@ -348,7 +358,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年7月8日</div>
+          <div>2023年7月9日</div>
         </div>
       
       
@@ -380,18 +390,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/Linux-%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81-IP/" title="Linux 配置静态 IP">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Linux 配置静态 IP</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/07/%E5%B7%A5%E5%9C%B0%EF%BC%8C%E9%BB%84%E6%98%8F%EF%BC%8C%E6%99%9A%E9%A3%8E%EF%BC%8C%E6%99%A8%E5%85%89%E3%80%82/" title="工地，黄昏，晚风，晨光。">
-                        <span class="hidden-mobile">工地，黄昏，晚风，晨光。</span>
+                      <a href="/2023/Java-%E5%9F%BA%E7%A1%80%E7%9A%84%E9%87%8D%E8%A6%81%E7%9F%A5%E8%AF%86%E7%82%B9/" title="Java 基础的重要知识点">
+                        <span class="hidden-mobile">Java 基础的重要知识点</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
